@@ -28,6 +28,7 @@
                       <div class="mate-list">
                         <span><%= post.dateFormat %></span>
                       </div>
+
                       <div class="mate-list">
                         <% post.tags.forEach(function(tag) { %>
                         <a href="<%= tag.link %>" data-title="<%= tag.name %>" data-type="post_tag">
@@ -35,6 +36,15 @@
                         </a>
                         <% }); %>
                       </div>
+
+                      <div class="mate-list">
+                        <div id="/post/<%= post.fileName %>/" class="leancloud-visitors view"
+                          data-flag-title="<%= post.title %>">
+                          <span class="post-meta-item-text">阅读 </span>
+                          <span class="leancloud-visitors-count"></span>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                   <div class="post-content">
@@ -45,17 +55,53 @@
                       <%- post.content %>
                     </div>
                   </div>
-                  <div class="post-footer"></div>
+                  <div class="post-footer">
+
+                    <% if (post.prevPost && post.nextPost) { %>
+                    <div class="post-navbar">
+                      <span class="title">上一篇：</span>
+                      <a href="<%= post.prevPost.link %>" class="post-link">
+                        <h2><%= post.prevPost.title %></h2>
+                      </a>
+                    </div>
+                    <div class="post-navbar">
+                      <span class="title">下一篇：</span>
+                      <a href="<%= post.nextPost.link %>" class="post-link">
+                        <h2><%= post.nextPost.title %></h2>
+                      </a>
+                    </div>
+                    <% } else if (post.prevPost) { %>
+                    <div class="post-navbar">
+                      <span class="title">上一篇：</span>
+                      <a href="<%= post.prevPost.link %>" class="post-link">
+                        <h2><%= post.prevPost.title %></h2>
+                      </a>
+                    </div>
+                    <% } else if (post.nextPost) { %>
+                    <div class="post-navbar">
+                      <span class="title">下一篇：</span>
+                      <a href="<%= post.nextPost.link %>" class="post-link">
+                        <h2><%= post.nextPost.title %></h2>
+                      </a>
+                    </div>
+                    <% } %>
+
+                  </div>
+
+                  <div class="post-zan">
+                    
+                  </div>
+
                   <div class="post-comment"></div>
                   <% if (site.customConfig.valineID && site.customConfig.valineKey) { %>
-                    <%- include('./includes/valine') %>
+                  <%- include('./includes/valine') %>
                   <% } %>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 
 

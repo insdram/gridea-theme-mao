@@ -50,10 +50,19 @@
             text-transform: capitalize;
             font-size: 14px;
             line-height: 22px;
+            margin-left: 24px;
             cursor: pointer;
 
             &:first-child {
               flex: 1 1;
+              margin: 0;
+            }
+
+            &:last-child::after {
+              content: "|";
+              position: absolute;
+              top: 0px;
+              left: -14px;
             }
           }
         }
@@ -169,6 +178,74 @@
 
         }
       }
+
+      .post-footer {
+        position: relative;
+        overflow: hidden;
+        margin: 1.5rem 0;
+        padding: 1.5rem 0;
+        border-top: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+
+        .post-navbar {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          &:nth-child(even) {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed @border-color;
+          }
+
+          .title {
+            font-size: 14px;
+          }
+
+          .post-link {
+            flex: 1 1;
+            text-align: right;
+
+            &:hover,
+            &:focus {
+              h2 {
+                color: @dark-main-color;
+              }
+            }
+
+            h2 {
+              margin: 0;
+              font-size: 14px;
+              font-weight: normal;
+              color: @main-color;
+            }
+          }
+        }
+      }
+
+      .post-zan {
+        position: relative;
+        padding: 4rem 0;
+        margin-bottom: 1.5rem;
+
+        .zan-content {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .btn-zan {
+            display: block;
+            width: 100%;
+            font-size: 21px;
+            text-align: center;
+          }
+          .zan-title {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 
@@ -186,9 +263,11 @@
   background: @darker-main-color;
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
   &:hover {
     background-color: @main-color;
   }
+
   i {
     font-size: 20px;
     color: #fff;

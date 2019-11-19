@@ -38,6 +38,23 @@
 					<% }); %>
 				</div>
 
+				<div class="layout-paginator">
+					<div class="paginator">
+
+						<% if (pagination.prev) { %>
+						<a href="<%= pagination.prev %>" class="btn btn-paginator">上一页</a>
+						<% } else { %>
+						<a class="btn disabled btn-paginator">上一页</a>
+						<% } %>
+						<% if (pagination.next) { %>
+						<a href="<%= pagination.next %>" class="btn btn-paginator">下一页</a>
+						<% } else { %>
+						<a class="btn disabled btn-paginator">下一页</a>
+						
+						<% } %>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

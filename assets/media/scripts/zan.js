@@ -38,26 +38,10 @@ function senddata(url, flag) {
 	});
 }
 
-function remcls() {
-	$('.heart').removeClass("heartAnimation");
-}
-
-function addcls() {
-	$('.heart').addClass("heartAnimation");
-}
-
 jQuery(document).ready(function () {
-	jQuery(".layout-post-social").append("<div id='zan' class='layout-social-item col-right color-primary'><span class='btn-zan' onclick=\"goodplus('" + url + "')\"> 喜欢 </span><span id='zan_text'></span></div>");
+	jQuery(".post-zan").append("<div id='zan' class='zan-content'><a class='btn-zan' onclick=\"goodplus('" + url + "')\"><i class='fa fa-heart-o' aria-hidden='true'></i></a><div class='zan-title'><span>点赞 </span><span id='zan_text'></span></div></div>");
 	senddata(url, flag);
-	jQuery('body').on("click", '.heart', function () {
-		jQuery('.heart').css("background-position", "")
-		var wwin = $('.heart').attr("class");
-		if (wwin === 'heart') {
-			$('.heart').addClass("heartAnimation");
-			tui = setTimeout("remcls()", 800)
-		} else {
-			remcls()
-			tuiw = setTimeout("addcls()", 100)
-		}
+	jQuery('body').on("click", '.btn-zan', function () {
+		jQuery('.btn-zan').find('.fa').removeClass('fa-heart-o').addClass('fa-heart');
 	});
 });

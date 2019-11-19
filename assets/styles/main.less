@@ -158,7 +158,8 @@ a:focus {
   text-decoration-skip: ink;
 }
 
-a:hover,a:active {
+a:hover,
+a:active {
   color: @dark-main-color;
 }
 
@@ -243,6 +244,14 @@ mark {
   color: @dark-main-color;
 }
 
+.btn.disabled,
+.btn[disabled] {
+  border-color: #d9d9d9;
+  background-color: #f5f5f5;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
 
 .clearfix {
   zoom: 1;
