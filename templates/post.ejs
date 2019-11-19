@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+</head>
+
+<body>
+
+  <%- include('./includes/header') %>
+  <%- include('./includes/menu') %>
+
+  <div class="lauout-main">
+    <div class="layout-content">
+      <div class="container">
+
+        <div class="layout-post">
+          <div class="layout-post-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="post-main">
+                  <div class="post-header">
+                    <div class="title">
+                      <h1><%= post.title %></h1>
+                    </div>
+                    <div class="mate">
+                      <div class="mate-list">
+                        <span><%= post.dateFormat %></span>
+                      </div>
+                      <div class="mate-list">
+                        <% post.tags.forEach(function(tag) { %>
+                        <a href="<%= tag.link %>" data-title="<%= tag.name %>" data-type="post_tag">
+                          <%= tag.name %>
+                        </a>
+                        <% }); %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-content">
+                    <div class="post-body">
+                      <% if (themeConfig.showFeatureImage && post.feature) { %> <p class="post-img"><img
+                          src="<%= post.feature %>" class="img" alt="<%= post.title %>" /></p>
+                      <% } %>
+                      <%- post.content %>
+                    </div>
+                  </div>
+                  <div class="post-footer"></div>
+                  <div class="post-comment"></div>
+                  <% if (site.customConfig.valineID && site.customConfig.valineKey) { %>
+                    <%- include('./includes/valine') %>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <%- include('./includes/footer') %>
+
+</body>
+
+</html>

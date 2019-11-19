@@ -1,0 +1,22 @@
+	<div class="layout-footer">
+		<div class="container">
+			<div class="footer-links">
+				<% ['rss', 'twitter', 'github', 'facebook','linkedin','telegram','douban','instagram','qq','weibo'].forEach((item) => { %>
+				<% if (site.customConfig[item]) { %>
+				<span class="link-item">
+					<a href="<%= site.customConfig[item] %>" target="_blank">
+						<i class="fa fa-<%= item %>"></i>
+					</a>
+				</span>
+				<% } %>
+				<% }) %>
+			</div>
+			<div class="footer-copy">
+				© 2019 <a href="<%= themeConfig.domain %>" title="<%= themeConfig.siteName %>"><%= themeConfig.siteName %></a> . 
+				<% if (site.customConfig.footinfo) { %><p class="site-description"><%= site.customConfig.footinfo%></p><% } %>
+				<%- themeConfig.footerInfo %>
+			</div>
+		</div>
+	</div>
+
+	<script type='text/javascript' src='<%= themeConfig.domain %>/media/scripts/main.js'></script>

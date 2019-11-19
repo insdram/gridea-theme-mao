@@ -1,0 +1,57 @@
+.layout-header {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 84px;
+  z-index: 1000;
+  background: @white;
+  line-height: 84px;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.1);
+
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .layout-site {
+    position: relative;
+    display: inline-block;
+    flex: 1 1;
+
+    a {
+      display: block;
+      float: left;
+      margin-right: 1rem;
+      max-width: 60px;
+      font-size: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .site-description {
+      color: @dark-main-color;
+      padding: 2px 0 2px 1rem;
+      border-left: 1px solid @odd-color;
+    }
+  }
+
+  .layout-trigger {
+    position: relative;
+    vertical-align: middle;
+    font-size: 18px;
+    cursor: pointer;
+    color: @dark-main-color;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+
+    &:hover {
+      color: @darker-main-color;
+    }
+  }
+
+}

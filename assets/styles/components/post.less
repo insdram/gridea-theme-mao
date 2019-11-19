@@ -1,0 +1,196 @@
+.layout-post {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 0 24px;
+  padding: 0;
+
+  .layout-post-body {
+    position: relative;
+    margin: 0;
+    padding: 24px 0;
+
+    .post-main {
+      overflow: visible;
+      line-height: 2;
+
+      .post-header {
+        margin: 0 0 1.6em;
+
+        .title {
+          margin: 0;
+          font-variant: tabular-nums;
+          font-family: Avenir, "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          line-height: 1.5;
+
+          h1 {
+            color: @dark-main-color;
+            font-weight: 500;
+            font-variant: tabular-nums;
+            font-size: 24px;
+            cursor: default;
+
+            &:hover {
+              color: @darker-main-color;
+            }
+          }
+        }
+
+        .mate {
+          position: relative;
+          display: flex;
+          margin: 1rem 0 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #f4f6f9;
+          font-size: 0;
+
+          .mate-list {
+            position: relative;
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.45);
+            text-transform: capitalize;
+            font-size: 14px;
+            line-height: 22px;
+            cursor: pointer;
+
+            &:first-child {
+              flex: 1 1;
+            }
+          }
+        }
+      }
+
+      .post-content {
+        overflow: visible;
+        margin: 0 0 24px;
+        padding: 0;
+        height: auto;
+        text-align: justify;
+        font-size: 14px;
+        line-height: 2;
+
+        .post-body {
+          position: relative;
+
+          ul>li {
+            margin-left: 20px;
+            padding-left: 4px;
+            list-style-type: circle;
+          }
+
+          img {
+            display: flex;
+            margin: 0 auto;
+            padding: 8px;
+            max-width: 100%;
+            min-width: 100%;
+            border: 1px solid #e8e8e8;
+            -webket-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -ms-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+
+            &:hover {
+              -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+              -moz-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+              box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+              -o-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+            }
+          }
+
+          table {
+            line-height: 1.7;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 1em 0;
+            width: 100%;
+            max-width: 100%;
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+            border-spacing: 0;
+            word-break: normal;
+          }
+
+          table,
+          table tr,
+          table tr td,
+          table tr th {
+            border-color: #E6E6E6;
+          }
+
+          table th {
+            font-weight: bold;
+            background-color: #FDFDFD;
+          }
+
+          tr th {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            text-align: left;
+          }
+
+          tr th,
+          tr td {
+            padding: 10px 20px;
+            border-right: 1px solid;
+            border-bottom: 1px solid #E6E6E6;
+          }
+
+          tbody tr:last-child td {
+            border-bottom: 0;
+          }
+
+          tr th:last-child,
+          tr td:last-child {
+            border-right: 0;
+          }
+
+          table tbody>tr:nth-child(odd)>td,
+          table tbody>tr:nth-child(odd)>th {
+            background-color: #F9F9F9;
+          }
+
+          .gist {
+            font-size: 12px;
+          }
+
+          .gist table {
+            margin: 0;
+            width: auto;
+          }
+
+          .gist table pre {
+            font-size: 12px;
+          }
+
+          .gist table .line-numbers {
+            font-size: 12px;
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+.layout-totop {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  background: @darker-main-color;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &:hover {
+    background-color: @main-color;
+  }
+  i {
+    font-size: 20px;
+    color: #fff;
+  }
+}

@@ -1,0 +1,25 @@
+.layout-footer {
+  padding: 32px 0;
+  background: @dark-main-color;
+  font-size: 14px;
+  text-align: center;
+
+  .footer-links {
+    margin-bottom: 8px;
+    color: @main-color;
+    font-size: 18px;
+    a:hover {
+      color: @even-color;
+    }
+  }
+
+  .footer-copy {
+    color: @main-color;
+    a {
+      color: @even-color;
+      &:hover {
+        color: @odd-color;
+      }
+    }
+  }
+}
