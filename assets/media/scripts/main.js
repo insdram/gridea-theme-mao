@@ -5,8 +5,17 @@
     $('.layout-header').find('.layout-trigger').bind('click', function (event) {
       event.stopPropagation();
       $('.layout-navigation').toggleClass('open');
-
     });
+
+    $(".post-comment").find( 'textarea#veditor').focus(function(){
+      $(this).siblings('div.vctrl').addClass("d-block");
+      $(this).parent().siblings('div.vcontrol').addClass("d-block");
+    })
+
+    $(".post-comment").on('click', 'span.vat', function () {
+      $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+      $('textarea#veditor').focus();
+    })
 
   });
 

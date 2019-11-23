@@ -12,7 +12,7 @@
 				<% }) %>
 			</div>
 			<div class="footer-copy">
-				© 2019 <a href="<%= themeConfig.domain %>" title="<%= themeConfig.siteName %>"><%= themeConfig.siteName %></a> . 
+				© 2019 <a href="<%= themeConfig.domain %>" title="<%= themeConfig.siteName %>"><%= themeConfig.siteName %></a> .
 				<% if (site.customConfig.footinfo) { %><p class="site-description"><%= site.customConfig.footinfo%></p><% } %>
 				<%- themeConfig.footerInfo %>
 			</div>
@@ -20,3 +20,14 @@
 	</div>
 
 	<script type='text/javascript' src='<%= themeConfig.domain %>/media/scripts/main.js'></script>
+	<% if (site.customConfig.baidu) { %>
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?<%= site.customConfig.baidu %>";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<% } %>
